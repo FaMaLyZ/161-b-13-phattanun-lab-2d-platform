@@ -8,6 +8,18 @@ public class Player : Character
         base.Initialize(100);
     }
 
+    public void OnHitWithEnemy(Enemy enemy)
+    {
+        TakeDamage(enemy.DamageHit);
+    }
+    private void OnCollisionEnter2D(Collision2D otherCollision)
+    {
+        Enemy enemy = otherCollision.gameObject.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            OnHitWithEnemy(enemy);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
