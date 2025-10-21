@@ -32,6 +32,8 @@ public class Croccodile : Enemy
     {
         Debug.Log($"{this.name} is shooting {player.name}!");
     }
+    
+    
     // Update is called once per frame
     void Update()
     {
