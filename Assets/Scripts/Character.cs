@@ -32,6 +32,15 @@ public abstract class Character : MonoBehaviour
             return false;
         }
     }
+    public void Initialize(int startHealth)
+    {
+        Health = startHealth;
+
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        
+        Debug.Log($"{this.name} has {startHealth} HP");
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
